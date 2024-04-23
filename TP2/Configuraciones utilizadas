@@ -1,0 +1,13 @@
+BFP640
+
+fallida
+VCE= 1.0V
+IC= 25mA
+
+fallida
+VCE= 1.0V
+IC= 20mA
+
+Incondicionalmente estable
+VCE= 1.0 V
+IC = 35mA
