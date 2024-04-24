@@ -1,14 +1,14 @@
 
 Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary_lib:cell_1:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 Port:TermG2  N__2 0 Num=2 Z=50 Ohm Noise=yes 
-Port:TermG1  N__7 0 Num=1 Z=50 Ohm Noise=yes 
-Amplifier:AMP1  N__7 N__2 S21=polar(1.5318, 7.0852) S11=polar(-0.5482, 0.1052) S22=polar(0.0421, -0.0879) S12=polar(0.0284, 0.0374) GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB ClipDataFile=0 
+Port:TermG1  Vin 0 Num=1 Z=50 Ohm Noise=yes 
+Amplifier:AMP1  Vin N__2 S21=polar(11.6979, 1.406) S11=polar(-0.0373, 0.0117) S22=polar(0.2102, -2.178) S12=polar(0.0425, 1.0134) GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB ClipDataFile=0 
 
 ;#@# autodisplay="S_Params_Quad_dB_Smith_Log"
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: SP1_stim Start=1.5 GHz Stop=1.7 GHz Center=1.6 GHz Span=0.5 GHz Dec=100 
+SweepPlan: SP1_stim Start=0.7 GHz Stop=3 GHz Center=1.6 GHz Span=0.5 GHz Dec=100 
 
 OutputPlan:SP1_Output \
       Type="Output" \

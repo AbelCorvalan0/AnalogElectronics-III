@@ -7,9 +7,9 @@ Warning detected by hpeesofsim during netlist flattening.
     Too many sweep limit specifiers given in `SP1_stim'.
     All but Start and Stop were ignored.
 
-SP SP1[1] <MyLibrary_lib:cell_1:schematic>   freq=(1.5 GHz->1.7 GHz)
-......
+SP SP1[1] <MyLibrary_lib:cell_1:schematic>   freq=(700 MHz->3 GHz)
+................................................................
 
 Resource usage:
-  Total stopwatch time     =     0.41 seconds.
+  Total stopwatch time     =     0.31 seconds.
 

@@ -12,7 +12,7 @@ Incondicionalmente estable
 VCE= 1.0 V
 IC = 35mA
 
-(5.6dB)
+(25dB)
 Polarización: Vce = 1.5 [V] - Ic = 37.0 [mA]
 S11: -0.3731+0.0117j, S12: 0.0225+0.0361j,
 S21: 1.9106+11.5409j, S22: 0.1200-0.1726j
