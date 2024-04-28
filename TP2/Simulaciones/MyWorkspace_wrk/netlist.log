@@ -1,14 +1,13 @@
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary_lib:cell_1:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary_lib:Transistor_Components:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+C:C1  0 N__8 C=5.377 pF 
+Port:TermG1  N__6 0 Num=1 Z=50 Ohm Noise=yes 
 Port:TermG2  N__2 0 Num=2 Z=50 Ohm Noise=yes 
-Port:TermG1  Vin 0 Num=1 Z=50 Ohm Noise=yes 
-Amplifier:AMP1  Vin N__2 S21=polar(11.6979, 1.406) S11=polar(-0.0373, 0.0117) S22=polar(0.2102, -2.178) S12=polar(0.0425, 1.0134) GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB ClipDataFile=0 
-
-;#@# autodisplay="S_Params_Quad_dB_Smith_Log"
+C:C2  0 N__2 C=1.1964 pF 
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: SP1_stim Start=0.7 GHz Stop=3 GHz Center=1.6 GHz Span=0.5 GHz Dec=100 
+SweepPlan: SP1_stim Start=1.0 GHz Stop=10.0 GHz Step=1.0 GHz 
 
 OutputPlan:SP1_Output \
       Type="Output" \
@@ -19,3 +18,20 @@ OutputPlan:SP1_Output \
 
 #load "python","LinearCollapse"
 Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+
+
+
+
+SweepPlan:Coarse SweepPlan[1]="Coarse_seg1" \ 
+SweepPlan[2]="Coarse_seg2" \ 
+SweepPlan[3]="Coarse_seg3" \ 
+SweepPlan[4]="Coarse_seg4" 
+SweepPlan:Coarse_seg1 Start=0.03e9 Stop=0.2e9 Step=5e6 
+SweepPlan:Coarse_seg2 Start=0.22e9 Stop=3.0e9 Step=20e6 
+SweepPlan:Coarse_seg3 Start=3.1e9 Stop=7.0e9 Step=100e6 
+SweepPlan:Coarse_seg4 Start=7.2e9 Stop=12e9 Step=200e6 
+model MSub1 MSUB H=1.66 mm Er=4.5 Mur=1 Cond=50E+6 Hu=3.9e+034 mil T=0.03 mm TanD=0 Rough=0 mil DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+#include "C:/Users/abelc/Documents/Design Kits ADS/Infineon_RF//circuit/models/BFP640_cktName.net" 
+BFP640_cktName:SNP1 N__5 N__8 0 File="BFP640_VCE_1.0V_IC_37mA.s2p" Temp=25 InterpMode="linear" InterpDom="" ExtrapMode="constant" CheckPassivity=0 
+TLIN:TL1  N__6 N__8 Z=23.952 Ohm tune{ 11.976 Ohm to 60 Ohm by 2.3952 Ohm } E=90 F=1.6 GHz 
+TLIN:TL2  N__5 N__2 Z=61.63 Ohm E=90 F=1.6 GHz 
