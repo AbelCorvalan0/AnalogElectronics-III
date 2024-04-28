@@ -1,16 +1,28 @@
 BFP640
 
-fallida
-VCE= 1.0V
-IC= 25mA
+capacitores ngk
 
-fallida
-VCE= 1.0V
-IC= 20mA
+##########
 
-Incondicionalmente estable
-VCE= 1.0 V
-IC = 35mA
+Polarización: Vce = 1.5 [V] - Ic = 37.0 [mA]
+S11: -0.3731+0.0117j, S12: 0.0225+0.0361j,
+S21: 1.9106+11.5409j, S22: 0.1200-0.1726j
+
+Polarización: Vce = 1.0 [V] - Ic = 32.0 [mA]
+S11: -0.4575+0.0416j, S12: 0.0275+0.0377j,
+S21: 1.8295+9.5005j, S22: 0.0484-0.1413j
+
+
+Polarización: Vce = 1.0 [V] - Ic = 35.0 [mA]
+S11: -0.5466+0.1053j, S12: 0.0284+0.0374j, 
+S21: 1.5319+7.0853j, S22: 0.0421-0.0879j
+
+
+Polarización: Vce = 1.0 [V] - Ic = 37.0 [mA]
+S11: -0.6069+0.1424j, S12: 0.0290+0.0375j, 
+S21: 1.2071+5.4448j, S22: 0.0348-0.0550j
+
+########
 
 (25dB)
 Polarización: Vce = 1.5 [V] - Ic = 37.0 [mA]
@@ -36,7 +48,7 @@ Polarización: Vce = 3.0 [V] - Ic = 48.0 [mA]
 S11: -0.3035+0.0053j, S12: 0.0182+0.0347j, 
 S21: 1.9613+13.1233j, S22: 0.1725-0.1843j
 
-
+#Funciona
 Polarización: Vce = 1.0 [V] - Ic = 32.0 [mA]
 S11: -0.4575+0.0416j, S12: 0.0275+0.0377j, 
 S21: 1.8295+9.5005j, S22: 0.0484-0.1413j
