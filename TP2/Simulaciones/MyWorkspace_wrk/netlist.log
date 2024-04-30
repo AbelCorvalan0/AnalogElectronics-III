@@ -1,25 +1,10 @@
 
 Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary_lib:Transistor_Test:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
-
-
-
-
-SweepPlan:Coarse SweepPlan[1]="Coarse_seg1" \ 
-SweepPlan[2]="Coarse_seg2" \ 
-SweepPlan[3]="Coarse_seg3" \ 
-SweepPlan[4]="Coarse_seg4" 
-SweepPlan:Coarse_seg1 Start=0.03e9 Stop=0.2e9 Step=5e6 
-SweepPlan:Coarse_seg2 Start=0.22e9e9 Stop=3.0e9 Step=20e6 
-SweepPlan:Coarse_seg3 Start=3.1e9 Stop=7.0e9 Step=100e6 
-SweepPlan:Coarse_seg4 Start=7.2e9 Stop=12e9 Step=200e6 
-MLOC2:TL6  N__6 Subst="MSub1" W=3.189 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLOC2:TL5  N__15 Subst="MSub1" W=3.189 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL4  N__13 N__6 Subst="MSub1" W=3.189 mm L=8.277 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
 model MSub1 MSUB H=1.66 mm Er=4.5 Mur=1 Cond=50.0E+50 Hu=3.9e+034 mil T=0.04 mm TanD=0 Rough=0 mil DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: SP1_stim Start=1.0 GHz Stop=10.0 GHz Step=1.0 GHz 
+SweepPlan: SP1_stim Start=1.0 GHz Stop=2.5 GHz Lin=100000 
 
 OutputPlan:SP1_Output \
       Type="Output" \
@@ -30,10 +15,13 @@ OutputPlan:SP1_Output \
 
 #load "python","LinearCollapse"
 Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
-MLIN2:TL2  N__3 N__13 Subst="MSub1" W=2.255 mm L=25.81 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL1  N__11 N__1 Subst="MSub1" W=9.12 mm L=24.276 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL3  N__1 N__15 Subst="MSub1" W=3.189 mm L=18.372 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL2  N__3 N__1 Subst="MSub1" W=2.255 mm L=25.81 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL1  N__11 N__7 Subst="MSub1" W=9.12 mm L=24.276 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
 Port:TermG1  N__11 0 Num=1 Z=50 Ohm Noise=yes 
-Port:TermG2  N__13 0 Num=2 Z=50 Ohm Noise=yes 
+Port:TermG2  N__1 0 Num=2 Z=50 Ohm Noise=yes 
 #include "C:/Users/abelc/Documents/Design Kits ADS/Infineon_RF//circuit/models/BFP640_cktName.net" 
-BFP640_cktName:SNP2 N__3 N__1 0 File="BFP640_VCE_1.0V_IC_37mA.s2p" Temp=25 InterpMode="linear" InterpDom="" ExtrapMode="constant" CheckPassivity=0 
+BFP640_cktName:SNP2 N__3 N__7 0 File="BFP640_VCE_1.0V_IC_37mA.s2p" Temp=25 InterpMode="linear" InterpDom="" ExtrapMode="constant" CheckPassivity=0 
+C:C1  0 N__7 C=6.16 pF 
+Short:TL4  0 N__6 Mode=0 SaveCurrent=no
+Short:TL3  0 N__15 Mode=0 SaveCurrent=no
+C:C2  0 N__1 C=1.34 pF 

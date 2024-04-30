@@ -6,8 +6,6 @@ s12= complex(0.0290, 0.0375)
 s21= complex(1.2071, 5.4448)
 s22= complex(0.0348, -0.0550)
 
-
-
 Resultados de la microtira de zo_in (TRAFO DE ENTRADA)=  23.952560044063233
 A= 0.8239329788743281
 B= 11.654751897114043
@@ -20,6 +18,7 @@ lamda= 0.1875
 lamda_eff= 0.09710579426304657
 lamda_eff_4= 0.02427644856576164
 
+we- 9.12mm
 
 Resultados de la microtira de zo_out (TRAFO DE SALIDA)=  61.637777959103936
 A= 1.8654973785990734
@@ -33,6 +32,7 @@ lamda= 0.1875
 lamda_eff= 0.10325767100452724
 lamda_eff_4= 0.02581441775113181
 
+we= 2.25mm
 
 Resultados de la microtira de zo=  50
 A= 1.5438461879006087
