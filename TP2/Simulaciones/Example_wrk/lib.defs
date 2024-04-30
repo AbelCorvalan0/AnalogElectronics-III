@@ -1,0 +1,4 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+DEFINE Example_lib Example_lib
+ASSIGN Example_lib libMode shared
+INCLUDE $HOME/Example_wrk/Infineon_RF/lib.defs

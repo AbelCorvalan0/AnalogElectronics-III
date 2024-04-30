@@ -1,0 +1,69 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="Example_lib:s_p1:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+MLIN2:CapOutTL  N__13 N__1 Subst="MSub1" W=3.2079 mm L=3.5 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:CapInTL  N__12 N__2 Subst="MSub1" W=3.2079 mm L=14.75 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:QWTrafoOutTL  N__25 N__17 Subst="MSub1" W=6.5301 mm L=21.8999 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:Z0TL2  N__5 N__7 Subst="MSub1" W=3.2079 mm L=10 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+model MSub1 MSUB H=1.66 mm Er=4.5 Mur=1 Cond=50.0E+50 Hu=3.9e+034 mil T=0.04 mm TanD=0 Rough=0 mil DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=1.0 GHz Stop=10.0 GHz Step=1.0 GHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+
+
+
+
+SweepPlan:SwpPlan1 SweepPlan[1]="SwpPlan1_seg1" \ 
+SweepPlan[2]="SwpPlan1_seg2" \ 
+SweepPlan[3]="SwpPlan1_seg3" \ 
+SweepPlan[4]="SwpPlan1_seg4" 
+SweepPlan:SwpPlan1_seg1 Start=0.03e9 Stop=0.200e9 Step=5e6 
+SweepPlan:SwpPlan1_seg2 Start=0.22e9 Stop=3.0e9 Step=20e6 
+SweepPlan:SwpPlan1_seg3 Start=3.100e9 Stop=7.0e9 Step=100e6 
+SweepPlan:SwpPlan1_seg4 Start=7.2e9 Stop=12e9 Step=200e6 
+MLOC2:TL6  N__21 Subst="MSub1" W=3.2079 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLOC2:TL25  N__9 Subst="MSub1" W=3.2079 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+#include "C:/Users/abelc/Example_wrk/Infineon_RF//circuit/models/BFP450_cktName.net" 
+BFP450_cktName:SNP1 N__25 N__8 0 File="BFP450_w_noise_VCE_1.0V_IC_60mA.s2p" Temp=25 InterpMode="linear" InterpDom="" ExtrapMode="constant" CheckPassivity=0 
+Port:TermG1  N__5 0 Num=1 Z=50 Ohm Noise=yes 
+Port:TermG2  N__28 0 Num=2 Z=50 Ohm Noise=yes 
+C:C1  N__7 N__4 C=10 nF 
+MLIN2:Z0TL  N__4 N__11 Subst="MSub1" W=3.2079 mm L=10 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:QWTrafoInTL  N__11 N__8 Subst="MSub1" W=8.2313 mm L=21.8999 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MGAP:Gap2  N__10 N__9 Subst="MSub1" W=3.2079 mil S=0.5 mm 
+MGAP:Gap1  N__2 N__10 Subst="MSub1" W=3.2079 mm S=0.5 mm 
+MTAPER:Taper1  N__12 N__8 Subst="MSub1" W1=0.5 mm W2=3.2079 mm L=3 mm 
+MTAPER:Taper23  N__14 N__8 Subst="MSub1" W1=0.5 mm W2=0.7817 mm L=3 mm 
+MLIN2:L_CH2  N__32 N__14 Subst="MSub1" W=0.7817 mm L=20.653 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MTAPER:Taper34  N__18 N__32 Subst="MSub1" W1=0.5 mm W2=6.7819 mm L=3 mm 
+MLIN2:C_DECOUP2  N__18 N__19 Subst="MSub1" W=6.7819 mm L=17.862 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MGAP:Gap35  N__19 N__23 Subst="MSub1" W=3.2079 mm S=0.5 mm 
+MGAP:Gap46  N__23 N__24 Subst="MSub1" W=3.2079 mm S=0.5 mm 
+MLOC2:TL114  N__24 Subst="MSub1" W=6.7819 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MTAPER:Taper2  N__13 N__17 Subst="MSub1" W1=0.5 mm W2=3.2079 mm L=3 mm 
+MGAP:Gap4  N__1 N__26 Subst="MSub1" W=3.2079 mm S=0.5 mm 
+MGAP:Gap3  N__26 N__21 Subst="MSub1" W=3.2079 mm S=0.5 mm 
+MLIN2:Z0TL1  N__17 N__22 Subst="MSub1" W=3.2079 mm L=10 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+C:C2  N__22 N__27 C=10 nF 
+MLIN2:TL13  N__27 N__28 Subst="MSub1" W=3.2079 mm L=10 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:L_CH1  N__3 N__25 Subst="MSub1" W=0.7817 mm L=23.653 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MTAPER:Taper5  N__16 N__3 Subst="MSub1" W1=0.5 mm W2=6.719 mm L=3 mm 
+MLIN2:C_DECOUP1  N__16 N__29 Subst="MSub1" W=6.7819 mm L=17.862 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MGAP:Gap7  N__29 N__33 Subst="MSub1" W=3.2079 mm S=0.5 mm 
+MGAP:Gap8  N__33 N__34 Subst="MSub1" W=3.2079 mm S=0.5 mm 
+MLOC2:TL163  N__34 Subst="MSub1" W=6.7819 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+R:R14  N__31 N__3 R=73.33 Ohm Noise=yes 
+R:R3  N__37 N__31 R=10 Ohm Noise=yes 
+R:R2  N__35 N__32 R=50 Ohm Noise=yes 
+R:R1  N__37 N__35 R=200 Ohm Noise=yes 
+V_Source:SRC1  N__37 0 Type="V_DC" Vdc=5 V SaveCurrent=1 
