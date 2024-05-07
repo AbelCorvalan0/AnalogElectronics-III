@@ -1,0 +1,15 @@
+
+hpeesofsim (*) 450.shp Jan 21 2016, MINT version 4
+    (64-bit windows built: 01/21/16 15:34:19)
+Copyright 1995 - 2015 Keysight Technologies, 1989-2016.
+
+Warning detected by hpeesofsim during netlist flattening.
+    Too many sweep limit specifiers given in `SP1_stim'.
+    All but Start and Stop were ignored.
+
+SP SP1[1] <MyLibrary_lib:cell_1:schematic>   freq=(700 MHz->3 GHz)
+................................................................
+
+Resource usage:
+  Total stopwatch time     =     0.43 seconds.
+

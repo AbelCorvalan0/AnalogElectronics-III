@@ -1,0 +1,4 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+DEFINE MyLibrary_lib MyLibrary_lib
+ASSIGN MyLibrary_lib libMode shared
+INCLUDE $HOME/Documents/Design${__SPACE}Kits${__SPACE}ADS/Infineon_RF/lib.defs

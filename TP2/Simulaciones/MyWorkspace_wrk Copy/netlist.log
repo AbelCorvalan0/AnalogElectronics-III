@@ -1,0 +1,44 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary_lib:Transistor_ch_decoup:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+MLIN2:TL1  N__9 N__6 Subst="MSub1" W=9.12 mm L=24.276 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLOC2:TL5  N__3 Subst="MSub1" W=3.189 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLOC2:TL6  N__5 Subst="MSub1" W=3.189 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL3  N__6 N__3 Subst="MSub1" W=3.189 mm L=20.385 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL2  N__8 N__19 Subst="MSub1" W=2.255 mm L=25.81 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL4  N__19 N__5 Subst="MSub1" W=3.189 mm L=9.634 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=1.0 GHz Stop=2.5 GHz Lin=100000 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+model MSub1 MSUB H=1.66 mm Er=4.5 Mur=1 Cond=50.0E+50 Hu=3.9e+034 mil T=0.04 mm TanD=0 Rough=0 mil DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+#include "C:/Users/abelc/Documents/Design Kits ADS/Infineon_RF//circuit/models/BFP640_cktName.net" 
+BFP640_cktName:SNP2 N__8 N__6 0 File="BFP640_VCE_1.0V_IC_37mA.s2p" Temp=25 InterpMode="linear" InterpDom="" ExtrapMode="constant" CheckPassivity=0 
+Port:TermG1  N__7 0 Num=1 Z=50 Ohm Noise=yes 
+Port:TermG2  N__21 0 Num=2 Z=50 Ohm Noise=yes 
+MLIN2:TL7  N__17 N__8 Subst="MSub1" W=0.79 mm L=24.987 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL8  N__17 N__10 Subst="MSub1" W=6.873 mm L=19.58 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLOC2:TL9  N__10 Subst="MSub1" W=6.873 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL10  N__6 N__0 Subst="MSub1" W=0.79 mm L=24.987 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL11  N__0 N__11 Subst="MSub1" W=6.873 mm L=19.58 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLOC2:TL12  N__11 Subst="MSub1" W=6.873 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+R:R1  N__15 N__0 R=6500 Ohm Noise=yes 
+R:R2  N__18 N__15 R=1000 Ohm Noise=yes 
+R:R3  0 N__15 R=820 Ohm Noise=yes 
+R:R4  N__18 N__17 R=110 Ohm Noise=yes 
+V_Source:SRC1  N__18 0 Type="V_DC" Vdc=5.0 V SaveCurrent=1 
+C:C1  N__14 N__13 C=10 nF 
+MLIN2:TL13  N__14 N__7 Subst="MSub1" W=3.189 mm L=4 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+C:C2  N__20 N__16 C=10 nF 
+MLIN2:TL14  N__19 N__20 Subst="MSub1" W=3.189 mm L=4 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL15  N__16 N__21 Subst="MSub1" W=3.189 mm L=4 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL16  N__9 N__13 Subst="MSub1" W=3.189 mm L=4 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
