@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="5" Version="100">
+<ADSWorkspace Revision="11" Version="100">
     <Workspace Name="">
         <Library Name="ads_standard_layers" />
         <Library Name="adstechlib" />
@@ -36,5 +36,15 @@
         <ConfigFile Name="hpeesofsim.cfg" />
         <Dataset Name="Transistor_Test.ds" />
         <Data_Display Name="Transistor_Test.dds" />
+        <Cell Name="MyLibrary_lib:Transistor_tapers" />
+        <Dataset Name="Transistor_ch_decoup.ds" />
+        <Dataset Name="Transistor_Ch_Dc.ds" />
+        <Cell Name="MyLibrary_lib:Transistor_Ch_Dec" />
+        <Dataset Name="Transistor_Ch_Dec.ds" />
+        <Dataset Name="Transistor_tapers.ds" />
+        <Data_Display Name="Transistor_tapers.dds" />
+        <Cell Name="MyLibrary_lib:Transistor_Gaps" />
+        <Dataset Name="Transistor_Gaps.ds" />
+        <Data_Display Name="Transistor_Gaps.dds" />
     </Workspace>
 </ADSWorkspace>

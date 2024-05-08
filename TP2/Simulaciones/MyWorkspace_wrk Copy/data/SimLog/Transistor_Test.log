@@ -8,5 +8,5 @@ SP SP1[1] <MyLibrary_lib:Transistor_Test:schematic>   freq=(1 GHz->2 GHz)
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-  Total stopwatch time     =     0.60 seconds.
+  Total stopwatch time     =     0.36 seconds.
 

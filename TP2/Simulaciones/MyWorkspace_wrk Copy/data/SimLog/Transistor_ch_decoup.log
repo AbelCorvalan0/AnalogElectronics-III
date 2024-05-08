@@ -4,9 +4,9 @@ hpeesofsim (*) 450.shp Jan 21 2016, MINT version 4
 Copyright 1995 - 2015 Keysight Technologies, 1989-2016.
 
 
-SP SP1[1] <MyLibrary_lib:Transistor_ch_decoup:schematic>   freq=(1 GHz->2.5 GHz)
+SP SP1[1] <MyLibrary_lib:Transistor_ch_decoup:schematic>   freq=(1 GHz->2 GHz)
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-  Total stopwatch time     =     4.41 seconds.
+  Total stopwatch time     =     5.81 seconds.
 

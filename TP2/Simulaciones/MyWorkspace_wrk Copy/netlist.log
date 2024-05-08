@@ -1,9 +1,21 @@
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary_lib:Transistor_Test:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
-MLOC2:TL2  N__6 Subst="MSub1" W=3.189 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLOC2:TL1  N__15 Subst="MSub1" W=3.19 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:CapOutTL  N__4 N__6 Subst="MSub1" W=3.19 mm L=8.367 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-model MSub1 MSUB H=1.66 mm Er=4.5 Mur=1 Cond=50.0E+50 Hu=3.9e+034 mil T=0.04 mm TanD=0 Rough=0 mil DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary_lib:Transistor_Ch_Dec:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+MLOC2:TL4  N__2 Subst="MSub1" W=6.67 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:L_Ch2  N__15 N__13 Subst="MSub1" W=1.624 mm L=21.12 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:QWTrafoOutTL  N__15 N__16 Subst="MSub1" W=2.255 mm L=25.814 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:QWTrafoInTL  N__9 N__6 Subst="MSub1" W=9.12 mm L=24.28 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:CapOutTL  N__16 N__12 Subst="MSub1" W=3.6047 mm tune{ 1.595 mm to 4.785 mm by 0.319 mm } L=8.367 mm tune{ 4.1835 mm to 12.5505 mm by 0.8367 mm } Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLOC2:TL3  N__3 Subst="MSub1" W=6.67 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:CapInTL  N__6 N__5 Subst="MSub1" W=4.2746 mm tune{ 1.595 mm to 4.785 mm by 0.319 mm } L=18.762 mm tune{ 8.85 mm to 26.55 mm by 1.77 mm } Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:C_Decoup1  N__4 N__3 Subst="MSub1" W=6.67 mm L=34 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:L_Ch1  N__6 N__4 Subst="MSub1" W=1.624 mm L=21.12 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLOC2:TL1  N__5 Subst="MSub1" W=3.19 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+Port:TermG1  N__9 0 Num=1 Z=50 Ohm Noise=yes 
+#include "C:/Users/abelc/Documents/Design Kits ADS/Infineon_RF//circuit/models/BFP640_cktName.net" 
+BFP640_cktName:SNP2 N__15 N__6 0 File="BFP640_VCE_1.0V_IC_37mA.s2p" Temp=25 InterpMode="linear" InterpDom="" ExtrapMode="constant" CheckPassivity=0 
+MLOC2:TL2  N__12 Subst="MSub1" W=3.19 mm L=0 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+Port:TermG2  N__16 0 Num=2 Z=50 Ohm Noise=yes 
+MLIN2:C_Decoup2  N__13 N__2 Subst="MSub1" W=6.67 mm L=34 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
@@ -18,10 +30,4 @@ OutputPlan:SP1_Output \
 
 #load "python","LinearCollapse"
 Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
-MLIN2:QWTrafoOutTL  N__3 N__4 Subst="MSub1" W=2.255 mm L=25.81 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:QWTrafoInTL  N__11 N__13 Subst="MSub1" W=9.12 mm L=24.276 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:CapInTL  N__13 N__15 Subst="MSub1" W=3.19 mm L=17.7 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-Port:TermG1  N__11 0 Num=1 Z=50 Ohm Noise=yes 
-Port:TermG2  N__4 0 Num=2 Z=50 Ohm Noise=yes 
-#include "C:/Users/abelc/Documents/Design Kits ADS/Infineon_RF//circuit/models/BFP640_cktName.net" 
-BFP640_cktName:SNP2 N__3 N__13 0 File="BFP640_VCE_1.0V_IC_37mA.s2p" Temp=25 InterpMode="linear" InterpDom="" ExtrapMode="constant" CheckPassivity=0 
+model MSub1 MSUB H=1.66 mm Er=4.5 Mur=1 Cond=50.0E+50 Hu=3.9e+034 mil T=0.04 mm TanD=0 Rough=0 mil DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
