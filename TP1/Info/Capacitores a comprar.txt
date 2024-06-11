@@ -1,0 +1,28 @@
+Configuración más precisa --------------------------------------------
+
+33pF+10pF= 43pF
+
+220pF+10pF= 230pF
+
+33pF+22pF= 55pF o 33pF+10pf+10pF= 53pF
+
+100pF
+
+
+Lista por cantidad
+
+33pF  (x3)
+10pF  (x4)
+220pF (x2)
+22pF  (x2)
+100pF (x2)
+
+Configuración rápida --------------------------------------------------
+
+33pF o 47pF
+
+220pF
+
+47pF
+
+100pF
