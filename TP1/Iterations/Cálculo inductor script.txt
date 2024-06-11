@@ -1,0 +1,33 @@
+import numpy as np
+import sympy as sym
+from sympy import abc
+C1, C2= sym.symbols('C_1, C_2')
+Rg= sym.symbols('Rg')
+
+#Debemos considerar los siguientes valores.
+#ZL= 1kohm
+#Zg= 50ohm
+#Qc= 10 (cargado)
+#f0= 20 Mhz
+#C_T= 120pF
+
+#Definimos RT= (Rg_p//RL_p//Rp)
+
+p1= (Rg_p*RL_p)/(Rg_p + RL_p)
+
+RT= (p1*Rp)/(p1 + Rp)
+
+Rg_p= 2*RT
+CT= 120e-12
+C= CT/2
+print("Los valores cargados son los siguientes: \n CT= ", CT, "   C1/2= ", C)
+
+#Procedemos a calcular las primer adaptación de impedancias
+Rg_p= ((1+(C1/C2))**2)*Rg
+sym.pprint(Rg_p)
+CT= (C1*C2)/(C1+C2)
+sym.pprint(CT)
+
+#Resolvemos las ecuaciones
+
+
