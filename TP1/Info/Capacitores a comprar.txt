@@ -26,3 +26,11 @@ Configuración rápida --------------------------------------------------
 47pF
 
 100pF
+
+
+Lista por cantidad
+
+33pF (x2)
+47pF (x3)
+220pF (x2)
+100pF (x2)
