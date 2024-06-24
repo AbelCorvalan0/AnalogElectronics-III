@@ -1,19 +1,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Calculo de ejemplo
 
-clear all; close all; clc
-pkg load symbolic
-syms wn psita real
-syms t kd kv N t1 t2 real
+%clear all; close all; clc
+%pkg load symbolic
+%syms wn psita real
+%syms t kd kv N t1 t2 real
 
 % Puede que tengan que ser en MAYUS (t1 y t2)
+fmax_vco= 2200e6
+fmin_vco= 1800e6
+vmax_vco= 18
+vmin_vco= 0.5
 
-kd= 10
-kv= 10
-N= 10
-t1= 10
-t2= 10
+kd= 0.2865
+kv= (fmax_vco-fmin_vco)/(vmax_vco-vmin_vco)
+N= 20
+
 t= 10e-3 %10ms
+psita= 0.5
 
 % Del gráfico del video PLL 2-3
 % https://drive.google.com/file/d/1EBDC_qdF5e1PHstlxqqsMATuQzLPqohK/view
