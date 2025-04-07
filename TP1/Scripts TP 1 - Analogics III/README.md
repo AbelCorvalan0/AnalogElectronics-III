@@ -39,7 +39,7 @@ $$ V_{teórica}= \frac{V_{g \, max}}{2}= \frac{500mV}{2}= 250mV $$
 
 $$ V_{medida}=  $$
 
-La frecuancia a la que realmente se mide la tensión pico máxima $ V_{g \, max}/2 $
+La frecuencia a la que realmente se mide la tensión pico máxima $ V_{g \, max}/2 $
 
 $$ f_{o}= 9.2MHz $$
 
